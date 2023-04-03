@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0-rc1.js"></script>
+</head> 
+<body>
+	<script type="text/javascript">
+        //根据输入的itemid去获取csv.php传过来的itemname
+        //静态更新不用刷新网页实时获取参数
+        // console.log(parseInt((670000000000001/10000000).toFixed(0)) + 670000000000001%10000000);
+        function showHint(str)
+        {
+            var xmlhttp;
+            if (str.length==0)
+            { 
+                document.getElementById("itemname").innerHTML="";
+                return;
+            }
+            if (window.XMLHttpRequest)
+            {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("itemname").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","csv.php?q="+str,true);
+            xmlhttp.send();
+        }
+        var pad = function(num, cover) {
+            return Array(cover).join(0).concat(num).slice(-cover);
+        };
+        function longid() {
+            var str = document.getElementById('showID').value;
+            if (str.length == 8) {
+                document.getElementById('showID1').value = str.substr(0, 2) + pad(str.substr(-5), 13);
+                
+            }else{
+                document.getElementById('showID1').value = str.substr(0, 3) + pad(str.substr(-5), 13);
+            }
+        }
+</script>
+<h2>添加物品（必须保证目标玩家在线）本地体验服都可用</h2>
+<h4>不指定卡牌点修改：就是所有卡牌修改等级</h4>
+<h4>指定卡牌点修改：就是单独卡牌修改等级</h4>
+<form name="itemForm" action='springboard.php' method="post" accept-charset="UTF-8">
+    玩家ID：<input type="text" name="showID" size="32" onkeyup="longid()" id="showID"/><br/>
+    <input type="text" name="showID1" size="32" id="showID1" hidden/>
+	物品ID：<input type="text" name="itemId" size="32" onkeyup="showHint(this.value)"/>物品名称：<span id="itemname"></span><br/>
+	物品数量：<input type="text" name="itemNum" size="32"/><br/>
+    卡牌等级：<input type="text" name="itemlevel" size="32" value='25'/><br/>
+    玩家杯数：<input type="text" name="roleScore" size="32"/><br/>
+	<br/>
+	<input type="hidden" name="flag" value=1>
+    <!-- <input type="hidden" name="gettype" value=4> -->
+	<input type="submit" value="修改" name = 'modify'/>&ensp;&ensp;&ensp;&ensp;<input type="submit" value="一键牛逼" name = 'modify'/><br/><br/>
+    <input type="submit" value="修改金戈" name = 'modify'/>&ensp;&ensp;&ensp;&ensp;<input type="submit" value="金戈牛逼" name = 'modify'/><br/><br/>
+    
+</form>
+</body> 
+</html>

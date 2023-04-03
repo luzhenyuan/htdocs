@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.23.custom.min.js"></script>
+</head>
+﻿<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>查询玩家道具</title> 
+<script type="text/javascript"> 
+var mycars = new Array()
+    mycars[1] = "冰骑";
+    
+    mycars[2] = "恶魔";
+    
+    mycars[3] = "火法";
+    
+    mycars[4] = "剑客";
+    
+    mycars[5] = "刺客";
+    
+    mycars[6] = "小鹿";
+    
+    mycars[7] = "冰法";
+    
+    mycars[8] = "蛇女";
+    
+    mycars[9] = "绿弓";
+    
+    mycars[10] = "冰弓";
+    
+    mycars[11] = "暗法";
+    
+    mycars[12] = "雷神";
+    
+    mycars[13] = "战将";
+    
+    mycars[14] = "刀客";
+    
+    mycars[15] = "海妖";
+    
+    mycars[16] = "大树";
+    
+    mycars[17] = "铁骑";
+    
+    mycars[18] = "飞机";
+    
+    mycars[19] = "炸弹";
+    
+    mycars[20] = "谜云";
+    
+    mycars[21] = "神龛";
+    
+    mycars[22] = "骨弓";
+    
+    mycars[23] = "祭司";
+    
+    mycars[24] = "斧客";
+    
+    mycars[25] = "死神";
+    
+    mycars[26] = "电法";
+    
+    mycars[27] = "火枪";
+    
+    mycars[28] = "石头";
+    
+    mycars[29] = "蜘蛛";
+    
+    mycars[30] = "骨龙";
+    
+    mycars[31] = "圣骑";
+    
+    mycars[32] = "巫医";
+    
+    mycars[33] = "女王";
+    
+    mycars[34] = "光精灵";
+    
+    mycars[35] = "雷精灵";
+    
+    mycars[36] = "悟空";
+    
+    mycars[37] = "幽灵";
+    
+    mycars[38] = "工匠";
+    
+    mycars[39] = "幻精灵";
+    
+    mycars[40] = "暗精灵";
+    
+    mycars[41] = "萌萌";
+    
+    mycars[42] = "恶匪";
+    
+    mycars[43] = "虎弓";
+    
+    mycars[44] = "木精灵";
+    
+    mycars[45] = "霸王";
+    
+    mycars[46] = "地精";
+    
+    mycars[47] = "毒王";
+    
+    mycars[48] = "萨满";
+    
+    mycars[49] = "神龙";
+    
+    mycars[50] = "魔精灵";
+    
+    mycars[51] = "狂龙";
+    
+    mycars[52] = "酋长";
+    
+    mycars[53] = "后羿";
+    
+    mycars[54] = "松鼠";
+    
+    mycars[55] = "亡将";
+    
+    mycars[56] = "炎魔";
+    
+    mycars[57] = "小丑";
+    
+    mycars[58] = "咕咕";
+    
+    mycars[59] = "火炮";
+    
+    mycars[60] = "领主";
+    
+    mycars[61] = "沙皇";
+    
+    mycars[62] = "孤星";
+    
+    mycars[97] = "测试小礼包";
+    
+    mycars[98] = "测试礼包";
+    
+    mycars[99] = "测试大礼包";
+    
+    mycars[100] = "默认信使";
+    
+    mycars[101] = "黑龙宝宝";
+    
+    mycars[102] = "绿龙宝宝";
+    
+    mycars[103] = "蓝龙宝宝";
+    
+    mycars[200] = "默认头像框";
+    
+    mycars[201] = "S1冠军头像框";
+    
+    mycars[202] = "S1荣耀头像框";
+    
+    mycars[203] = "S2冠军头像框";
+    
+    mycars[204] = "S2荣耀头像框";
+    
+    mycars[205] = "S3冠军头像框";
+    
+    mycars[206] = "S3荣耀头像框";
+    
+    mycars[207] = "S4冠军头像框";
+    
+    mycars[208] = "S4荣耀头像框";
+    
+    mycars[209] = "S5冠军头像框";
+    
+    mycars[210] = "S5荣耀头像框";
+    
+    mycars[211] = "金牌主播";
+    
+    mycars[212] = "银牌主播";
+    
+    mycars[213] = "S6冠军头像框";
+    
+    mycars[214] = "S6荣耀头像框";
+    
+    mycars[215] = "武道巅峰";
+    
+    mycars[216] = "武道达人";
+    
+    mycars[217] = "S7冠军头像框";
+    
+    mycars[218] = "S7荣耀头像框";
+    
+    mycars[219] = "S8冠军头像框";
+    
+    mycars[220] = "S8荣耀头像框";
+    
+    mycars[221] = "S9冠军头像框";
+    
+    mycars[222] = "S9荣耀头像框";
+    
+    mycars[223] = "武道巅峰2";
+    
+    mycars[224] = "武道达人2";
+    
+    mycars[225] = "S10冠军头像框";
+    
+    mycars[226] = "S10荣耀头像框";
+    
+    mycars[227] = "S11冠军头像框";
+    
+    mycars[228] = "S11荣耀头像框";
+    
+    mycars[229] = "S12冠军头像框";
+    
+    mycars[230] = "S12荣耀头像框";
+    
+    mycars[231] = "钻石矿主";
+    
+    mycars[232] = "金币矿主";
+    
+    mycars[233] = "狂热粉丝";
+    
+    mycars[234] = "氪金大佬";
+    
+    mycars[235] = "功成名就";
+    
+    mycars[236] = "精灵专属";
+    
+    mycars[237] = "不败神话";
+    
+    mycars[238] = "S13冠军头像框";
+    
+    mycars[239] = "S13荣耀头像框";
+    
+    mycars[240] = "武道巅峰3";
+    
+    mycars[241] = "武道达人3";
+    
+    mycars[242] = "S14冠军头像框";
+    
+    mycars[243] = "S14荣耀头像框";
+    
+    mycars[501] = "锁子甲";
+    
+    mycars[502] = "魔抗斗篷";
+    
+    mycars[503] = "活力之球";
+    
+    mycars[504] = "攻击之爪";
+    
+    mycars[505] = "枯萎之石";
+    
+    mycars[506] = "法师长袍";
+    
+    mycars[601] = "大笑";
+    
+    mycars[602] = "加油";
+    
+    mycars[603] = "大哭";
+    
+    mycars[604] = "发怒";
+    
+    mycars[605] = "呕吐";
+    
+    mycars[701] = "神秘古堡";
+    
+    mycars[702] = "暴风城郊";
+    
+    mycars[1001] = "金币";
+    
+    mycars[1002] = "钻石";
+    
+    mycars[1003] = "银币";
+    
+    mycars[1004] = "积分";
+    
+    mycars[1005] = "成就点数";
+    
+    mycars[1006] = "金冠";
+    
+    mycars[1007] = "扫荡卡";
+    
+    mycars[1008] = "联盟勋章";
+    
+    mycars[1009] = "联盟贡献";
+    
+    mycars[1010] = "免广告卡";
+    
+    mycars[2001] = "死亡骑士头像";
+    
+    mycars[2002] = "恶魔猎手头像";
+    
+    mycars[2003] = "火女头像";
+    
+    mycars[2004] = "剑圣头像";
+    
+    mycars[2005] = "幻刺头像";
+    
+    mycars[2006] = "魅惑魔女头像";
+    
+    mycars[2007] = "冰女头像";
+    
+    mycars[2008] = "大娜迦头像";
+    
+    mycars[2009] = "风行者头像";
+    
+    mycars[2010] = "黑暗游侠头像";
+    
+    mycars[2011] = "光法头像";
+    
+    mycars[2012] = "宙斯头像";
+    
+    mycars[2013] = "巨魔头像";
+    
+    mycars[2014] = "斯温头像";
+    
+    mycars[2015] = "潮汐猎人头像";
+    
+    mycars[2016] = "大树头像";
+    
+    mycars[2017] = "军团头像";
+    
+    mycars[2018] = "飞机头像";
+    
+    mycars[2019] = "炸弹人头像";
+    
+    mycars[2020] = "谜团头像";
+    
+    mycars[2021] = "神灵头像";
+    
+    mycars[2022] = "骨弓头像";
+    
+    mycars[2023] = "先知头像";
+    
+    mycars[2024] = "斧王头像";
+    
+    mycars[2025] = "死灵头像";
+    
+    mycars[2026] = "电魂头像";
+    
+    mycars[2027] = "火枪头像";
+    
+    mycars[2028] = "小小头像";
+    
+    mycars[2029] = "蜘蛛头像";
+    
+    mycars[2030] = "死灵龙头像";
+    
+    mycars[2031] = "圣骑头像";
+    
+    mycars[2032] = "巫医头像";
+    
+    mycars[2033] = "女王头像";
+    
+    mycars[2034] = "光精灵头像";
+    
+    mycars[2035] = "雷精灵头像";
+    
+    mycars[2036] = "悟空头像";
+    
+    mycars[2037] = "幽鬼头像";
+    
+    mycars[2038] = "工匠头像";
+    
+    mycars[2039] = "幻精灵头像";
+    
+    mycars[2040] = "暗精灵头像";
+    
+    mycars[2041] = "萌萌头像";
+    
+    mycars[2042] = "屠夫头像";
+    
+    mycars[2043] = "白虎头像";
+    
+    mycars[2044] = "木精灵头像";
+    
+    mycars[2045] = "霸王头像";
+    
+    mycars[2046] = "地精头像";
+    
+    mycars[2047] = "毒王头像";
+    
+    mycars[2048] = "萨满头像";
+    
+    mycars[2049] = "神龙头像";
+    
+    mycars[2050] = "魔精灵头像";
+    
+    mycars[2051] = "狂龙头像";
+    
+    mycars[2052] = "酋长头像";
+    
+    mycars[2053] = "后羿头像";
+    
+    mycars[2054] = "松鼠头像";
+    
+    mycars[2055] = "亡将头像";
+    
+    mycars[2056] = "炎魔头像";
+    
+    mycars[2057] = "小丑头像";
+    
+    mycars[2058] = "咕咕头像";
+    
+    mycars[2059] = "火炮头像";
+    
+    mycars[2060] = "领主头像";
+    
+    mycars[2061] = "沙皇头像";
+    
+    mycars[2062] = "孤星头像";
+    
+    mycars[3001] = "随机绿卡*1~3";
+    
+    mycars[3002] = "随机绿卡*2~6";
+    
+    mycars[3003] = "随机绿卡*3~9";
+    
+    mycars[3004] = "随机绿卡*4";
+    
+    mycars[3005] = "随机绿卡*6~10";
+    
+    mycars[3006] = "随机绿卡*12~20";
+    
+    mycars[3007] = "随机绿卡*40";
+    
+    mycars[3008] = "随机绿卡*90";
+    
+    mycars[3009] = "随机绿卡*130";
+    
+    mycars[3011] = "随机蓝卡*1~1";
+    
+    mycars[3012] = "随机蓝卡*1~2";
+    
+    mycars[3013] = "随机蓝卡*1~3";
+    
+    mycars[3014] = "随机蓝卡*2~4";
+    
+    mycars[3015] = "随机蓝卡*4~8";
+    
+    mycars[3016] = "随机蓝卡*8";
+    
+    mycars[3017] = "随机蓝卡*20";
+    
+    mycars[3018] = "随机蓝卡*35";
+    
+    mycars[3020] = "随机紫卡";
+    
+    mycars[3021] = "随机紫卡*1~2";
+    
+    mycars[3022] = "随机紫卡*2";
+    
+    mycars[3023] = "随机紫卡*5";
+    
+    mycars[3024] = "随机紫卡*12";
+    
+    mycars[3030] = "随机橙卡";
+    
+    mycars[3031] = "随机橙卡(娜迦、恶魔、流浪、密云、炸弹)";
+    
+    mycars[3032] = "随机橙卡(每日超值)";
+    
+    mycars[4001] = "每日免费宝箱1必掉蓝绿";
+    
+    mycars[4002] = "每日免费宝箱1概率掉紫";
+    
+    mycars[4003] = "每日免费宝箱1概率掉金";
+    
+    mycars[4011] = "每日免费宝箱2必掉蓝绿紫";
+    
+    mycars[4012] = "每日免费宝箱2概率掉金";
+    
+    mycars[4021] = "每日免费宝箱3必掉蓝绿紫";
+    
+    mycars[4022] = "每日免费宝箱3概率掉紫";
+    
+    mycars[4023] = "每日免费宝箱3概率掉金";
+    
+    mycars[4031] = "广告紫宝箱必掉蓝绿紫";
+    
+    mycars[4032] = "广告紫宝箱概率掉金";
+    
+    mycars[4041] = "广告3日宝箱必掉蓝绿紫";
+    
+    mycars[4042] = "广告3日宝箱概率掉金";
+    
+    mycars[4051] = "广告7日宝箱必掉蓝绿紫";
+    
+    mycars[4052] = "广告7日宝箱概率掉金";
+    
+    mycars[4061] = "精灵的馈赠蓝绿卡";
+    
+    mycars[4062] = "精灵的馈赠紫卡";
+    
+    mycars[4063] = "精灵的馈赠金币钻石";
+    
+    mycars[4070] = "邀请好友奖励金卡";
+    
+    mycars[4071] = "邀请好友奖励金卡";
+    
+    mycars[4072] = "邀请好友奖励金卡";
+    
+    mycars[4073] = "邀请好友奖励金卡";
+    
+    mycars[4074] = "邀请好友奖励金卡";
+    
+    mycars[4075] = "邀请好友奖励金卡";
+    
+    mycars[4076] = "邀请好友奖励金卡";
+    
+    mycars[5001] = "超值好礼:(恶魔猎手等4随1（30）)";
+    
+    mycars[5002] = "超值好礼:(恶魔猎手等4随1（30）)";
+    
+    mycars[5003] = "超值好礼:(法猎等4随1（30）)";
+    
+    mycars[5004] = "超值好礼:(法战等4随1（30）)";
+    
+    mycars[5005] = "超值好礼:(战猎等4随1（30）)";
+    
+    mycars[5006] = "超值好礼:(女王、战将等4随1（30）)";
+    
+    mycars[5007] = "超值好礼:(女王、刀客等4随1（30）)";
+    
+    mycars[5008] = "超值好礼:(女王、恶魔等4随1（30）)";
+    
+    mycars[5009] = "超值好礼:(幽鬼、宙斯等4随1（30）)";
+    
+    mycars[5010] = "超值好礼:(幽鬼、战将等4随1（30）)";
+    
+    mycars[5101] = "冰骑（精选好礼）";
+    
+    mycars[5102] = "恶魔（精选好礼）";
+    
+    mycars[5103] = "火法（精选好礼）";
+    
+    mycars[5104] = "剑客（精选好礼）";
+    
+    mycars[5105] = "刺客（精选好礼）";
+    
+    mycars[5106] = "小鹿（精选好礼）";
+    
+    mycars[5107] = "冰法（精选好礼）";
+    
+    mycars[5108] = "蛇女（精选好礼）";
+    
+    mycars[5109] = "绿弓（精选好礼）";
+    
+    mycars[5110] = "冰弓（精选好礼）";
+    
+    mycars[5111] = "暗法（精选好礼）";
+    
+    mycars[5112] = "雷神（精选好礼）";
+    
+    mycars[5113] = "战将（精选好礼）";
+    
+    mycars[5114] = "刀客（精选好礼）";
+    
+    mycars[5115] = "海妖（精选好礼）";
+    
+    mycars[5116] = "大树（精选好礼）";
+    
+    mycars[5117] = "铁骑（精选好礼）";
+    
+    mycars[5118] = "飞机（精选好礼）";
+    
+    mycars[5119] = "炸弹（精选好礼）";
+    
+    mycars[5120] = "谜云（精选好礼）";
+    
+    mycars[5121] = "神龛（精选好礼）";
+    
+    mycars[5122] = "骨弓（精选好礼）";
+    
+    mycars[5123] = "祭司（精选好礼）";
+    
+    mycars[5124] = "斧客（精选好礼）";
+    
+    mycars[5125] = "死神（精选好礼）";
+    
+    mycars[5126] = "电法（精选好礼）";
+    
+    mycars[5127] = "火枪（精选好礼）";
+    
+    mycars[5128] = "石头（精选好礼）";
+    
+    mycars[5129] = "蜘蛛（精选好礼）";
+    
+    mycars[5130] = "骨龙（精选好礼）";
+    
+    mycars[5131] = "圣骑（精选好礼）";
+    
+    mycars[5132] = "巫医（精选好礼）";
+    
+    mycars[5133] = "女王（精选好礼）";
+    
+    mycars[5134] = "光精灵（精选好礼）";
+    
+    mycars[5135] = "雷精灵（精选好礼）";
+    
+    mycars[5136] = "悟空（精选好礼）";
+    
+    mycars[5137] = "幽灵（精选好礼）";
+    
+    mycars[5138] = "工匠（精选好礼）";
+    
+    mycars[5139] = "幻精灵（精选好礼）";
+    
+    mycars[5140] = "暗精灵（精选好礼）";
+    
+    mycars[5141] = "萌萌（精选好礼）";
+    
+    mycars[5142] = "恶匪（精选好礼）";
+    
+    mycars[5143] = "虎弓（精选好礼）";
+    
+    mycars[5144] = "木精灵（精选好礼）";
+    
+    mycars[5145] = "霸王（精选好礼）";
+    
+    mycars[5146] = "地精（精选好礼）";
+    
+    mycars[5147] = "毒王（精选好礼）";
+    
+    mycars[5148] = "萨满（精选好礼）";
+    
+    mycars[5149] = "神龙（精选好礼）";
+    
+    mycars[5150] = "魔精灵（精选好礼）";
+    
+    mycars[5151] = "狂龙（精选好礼）";
+    
+    mycars[5152] = "酋长（精选好礼）";
+    
+    mycars[5153] = "后羿（精选好礼）";
+    
+    mycars[5154] = "松鼠（精选好礼）";
+    
+    mycars[5155] = "亡将（精选好礼）";
+    
+    mycars[5156] = "炎魔（精选好礼）";
+    
+    mycars[5157] = "小丑（精选好礼）";
+    
+    mycars[5158] = "咕咕（精选好礼）";
+    
+    mycars[5159] = "火炮（精选好礼）";
+    
+    mycars[5160] = "领主（精选好礼）";
+    
+    mycars[5161] = "沙皇（精选好礼）";
+    
+    mycars[5162] = "孤星（精选好礼）";
+    
+    mycars[5201] = "冰骑（精选好礼）";
+    
+    mycars[5202] = "恶魔（精选好礼）";
+    
+    mycars[5203] = "火法（精选好礼）";
+    
+    mycars[5204] = "剑客（精选好礼）";
+    
+    mycars[5205] = "刺客（精选好礼）";
+    
+    mycars[5206] = "小鹿（精选好礼）";
+    
+    mycars[5207] = "冰法（精选好礼）";
+    
+    mycars[5208] = "蛇女（精选好礼）";
+    
+    mycars[5209] = "绿弓（精选好礼）";
+    
+    mycars[5210] = "冰弓（精选好礼）";
+    
+    mycars[5211] = "暗法（精选好礼）";
+    
+    mycars[5212] = "雷神（精选好礼）";
+    
+    mycars[5213] = "战将（精选好礼）";
+    
+    mycars[5214] = "刀客（精选好礼）";
+    
+    mycars[5215] = "海妖（精选好礼）";
+    
+    mycars[5216] = "大树（精选好礼）";
+    
+    mycars[5217] = "铁骑（精选好礼）";
+    
+    mycars[5218] = "飞机（精选好礼）";
+    
+    mycars[5219] = "炸弹（精选好礼）";
+    
+    mycars[5220] = "谜云（精选好礼）";
+    
+    mycars[5221] = "神龛（精选好礼）";
+    
+    mycars[5222] = "骨弓（精选好礼）";
+    
+    mycars[5223] = "祭司（精选好礼）";
+    
+    mycars[5224] = "斧客（精选好礼）";
+    
+    mycars[5225] = "死神（精选好礼）";
+    
+    mycars[5226] = "电法（精选好礼）";
+    
+    mycars[5227] = "火枪（精选好礼）";
+    
+    mycars[5228] = "石头（精选好礼）";
+    
+    mycars[5229] = "蜘蛛（精选好礼）";
+    
+    mycars[5230] = "骨龙（精选好礼）";
+    
+    mycars[5231] = "圣骑（精选好礼）";
+    
+    mycars[5232] = "巫医（精选好礼）";
+    
+    mycars[5233] = "女王（精选好礼）";
+    
+    mycars[5234] = "光精灵（精选好礼）";
+    
+    mycars[5235] = "雷精灵（精选好礼）";
+    
+    mycars[5236] = "悟空（精选好礼）";
+    
+    mycars[5237] = "幽灵（精选好礼）";
+    
+    mycars[5238] = "工匠（精选好礼）";
+    
+    mycars[5239] = "幻精灵（精选好礼）";
+    
+    mycars[5240] = "暗精灵（精选好礼）";
+    
+    mycars[5241] = "萌萌（精选好礼）";
+    
+    mycars[5242] = "恶匪（精选好礼）";
+    
+    mycars[5243] = "虎弓（精选好礼）";
+    
+    mycars[5244] = "木精灵（精选好礼）";
+    
+    mycars[5245] = "霸王（精选好礼）";
+    
+    mycars[5246] = "地精（精选好礼）";
+    
+    mycars[5247] = "毒王（精选好礼）";
+    
+    mycars[5248] = "萨满（精选好礼）";
+    
+    mycars[5249] = "神龙（精选好礼）";
+    
+    mycars[5250] = "魔精灵（精选好礼）";
+    
+    mycars[5251] = "狂龙（精选好礼）";
+    
+    mycars[5252] = "酋长（精选好礼）";
+    
+    mycars[5253] = "后羿（精选好礼）";
+    
+    mycars[5254] = "松鼠（精选好礼）";
+    
+    mycars[5255] = "亡将（精选好礼）";
+    
+    mycars[5256] = "炎魔（精选好礼）";
+    
+    mycars[5257] = "小丑（精选好礼）";
+    
+    mycars[5258] = "咕咕（精选好礼）";
+    
+    mycars[5259] = "火炮（精选好礼）";
+    
+    mycars[5260] = "领主（精选好礼）";
+    
+    mycars[5261] = "沙皇（精选好礼）";
+    
+    mycars[5262] = "孤星（精选好礼）";
+    
+    mycars[5301] = "冰骑（精选好礼）";
+    
+    mycars[5302] = "恶魔（精选好礼）";
+    
+    mycars[5303] = "火法（精选好礼）";
+    
+    mycars[5304] = "剑客（精选好礼）";
+    
+    mycars[5305] = "刺客（精选好礼）";
+    
+    mycars[5306] = "小鹿（精选好礼）";
+    
+    mycars[5307] = "冰法（精选好礼）";
+    
+    mycars[5308] = "蛇女（精选好礼）";
+    
+    mycars[5309] = "绿弓（精选好礼）";
+    
+    mycars[5310] = "冰弓（精选好礼）";
+    
+    mycars[5311] = "暗法（精选好礼）";
+    
+    mycars[5312] = "雷神（精选好礼）";
+    
+    mycars[5313] = "战将（精选好礼）";
+    
+    mycars[5314] = "刀客（精选好礼）";
+    
+    mycars[5315] = "海妖（精选好礼）";
+    
+    mycars[5316] = "大树（精选好礼）";
+    
+    mycars[5317] = "铁骑（精选好礼）";
+    
+    mycars[5318] = "飞机（精选好礼）";
+    
+    mycars[5319] = "炸弹（精选好礼）";
+    
+    mycars[5320] = "谜云（精选好礼）";
+    
+    mycars[5321] = "神龛（精选好礼）";
+    
+    mycars[5322] = "骨弓（精选好礼）";
+    
+    mycars[5323] = "祭司（精选好礼）";
+    
+    mycars[5324] = "斧客（精选好礼）";
+    
+    mycars[5325] = "死神（精选好礼）";
+    
+    mycars[5326] = "电法（精选好礼）";
+    
+    mycars[5327] = "火枪（精选好礼）";
+    
+    mycars[5328] = "石头（精选好礼）";
+    
+    mycars[5329] = "蜘蛛（精选好礼）";
+    
+    mycars[5330] = "骨龙（精选好礼）";
+    
+    mycars[5331] = "圣骑（精选好礼）";
+    
+    mycars[5332] = "巫医（精选好礼）";
+    
+    mycars[5333] = "女王（精选好礼）";
+    
+    mycars[5334] = "光精灵（精选好礼）";
+    
+    mycars[5335] = "雷精灵（精选好礼）";
+    
+    mycars[5336] = "悟空（精选好礼）";
+    
+    mycars[5337] = "幽灵（精选好礼）";
+    
+    mycars[5338] = "工匠（精选好礼）";
+    
+    mycars[5339] = "幻精灵（精选好礼）";
+    
+    mycars[5340] = "暗精灵（精选好礼）";
+    
+    mycars[5341] = "萌萌（精选好礼）";
+    
+    mycars[5342] = "恶匪（精选好礼）";
+    
+    mycars[5343] = "虎弓（精选好礼）";
+    
+    mycars[5344] = "木精灵（精选好礼）";
+    
+    mycars[5345] = "霸王（精选好礼）";
+    
+    mycars[5346] = "地精（精选好礼）";
+    
+    mycars[5347] = "毒王（精选好礼）";
+    
+    mycars[5348] = "萨满（精选好礼）";
+    
+    mycars[5349] = "神龙（精选好礼）";
+    
+    mycars[5350] = "魔精灵（精选好礼）";
+    
+    mycars[5351] = "狂龙（精选好礼）";
+    
+    mycars[5352] = "酋长（精选好礼）";
+    
+    mycars[5353] = "后羿（精选好礼）";
+    
+    mycars[5354] = "松鼠（精选好礼）";
+    
+    mycars[5355] = "亡将（精选好礼）";
+    
+    mycars[5356] = "炎魔（精选好礼）";
+    
+    mycars[5357] = "小丑（精选好礼）";
+    
+    mycars[5358] = "咕咕（精选好礼）";
+    
+    mycars[5359] = "火炮（精选好礼）";
+    
+    mycars[5360] = "领主（精选好礼）";
+    
+    mycars[5361] = "沙皇（精选好礼）";
+    
+    mycars[5362] = "孤星（精选好礼）";
+    
+    mycars[5401] = "冰骑（精选好礼）";
+    
+    mycars[5402] = "恶魔（精选好礼）";
+    
+    mycars[5403] = "火法（精选好礼）";
+    
+    mycars[5404] = "剑客（精选好礼）";
+    
+    mycars[5405] = "刺客（精选好礼）";
+    
+    mycars[5406] = "小鹿（精选好礼）";
+    
+    mycars[5407] = "冰法（精选好礼）";
+    
+    mycars[5408] = "蛇女（精选好礼）";
+    
+    mycars[5409] = "绿弓（精选好礼）";
+    
+    mycars[5410] = "冰弓（精选好礼）";
+    
+    mycars[5411] = "暗法（精选好礼）";
+    
+    mycars[5412] = "雷神（精选好礼）";
+    
+    mycars[5413] = "战将（精选好礼）";
+    
+    mycars[5414] = "刀客（精选好礼）";
+    
+    mycars[5415] = "海妖（精选好礼）";
+    
+    mycars[5416] = "大树（精选好礼）";
+    
+    mycars[5417] = "铁骑（精选好礼）";
+    
+    mycars[5418] = "飞机（精选好礼）";
+    
+    mycars[5419] = "炸弹（精选好礼）";
+    
+    mycars[5420] = "谜云（精选好礼）";
+    
+    mycars[5421] = "神龛（精选好礼）";
+    
+    mycars[5422] = "骨弓（精选好礼）";
+    
+    mycars[5423] = "祭司（精选好礼）";
+    
+    mycars[5424] = "斧客（精选好礼）";
+    
+    mycars[5425] = "死神（精选好礼）";
+    
+    mycars[5426] = "电法（精选好礼）";
+    
+    mycars[5427] = "火枪（精选好礼）";
+    
+    mycars[5428] = "石头（精选好礼）";
+    
+    mycars[5429] = "蜘蛛（精选好礼）";
+    
+    mycars[5430] = "骨龙（精选好礼）";
+    
+    mycars[5431] = "圣骑（精选好礼）";
+    
+    mycars[5432] = "巫医（精选好礼）";
+    
+    mycars[5433] = "女王（精选好礼）";
+    
+    mycars[5434] = "光精灵（精选好礼）";
+    
+    mycars[5435] = "雷精灵（精选好礼）";
+    
+    mycars[5436] = "悟空（精选好礼）";
+    
+    mycars[5437] = "幽灵（精选好礼）";
+    
+    mycars[5438] = "工匠（精选好礼）";
+    
+    mycars[5439] = "幻精灵（精选好礼）";
+    
+    mycars[5440] = "暗精灵（精选好礼）";
+    
+    mycars[5441] = "萌萌（精选好礼）";
+    
+    mycars[5442] = "恶匪（精选好礼）";
+    
+    mycars[5443] = "虎弓（精选好礼）";
+    
+    mycars[5444] = "木精灵（精选好礼）";
+    
+    mycars[5445] = "霸王（精选好礼）";
+    
+    mycars[5446] = "地精（精选好礼）";
+    
+    mycars[5447] = "毒王（精选好礼）";
+    
+    mycars[5448] = "萨满（精选好礼）";
+    
+    mycars[5449] = "神龙（精选好礼）";
+    
+    mycars[5450] = "魔精灵（精选好礼）";
+    
+    mycars[5451] = "狂龙（精选好礼）";
+    
+    mycars[5452] = "酋长（精选好礼）";
+    
+    mycars[5453] = "后羿（精选好礼）";
+    
+    mycars[5454] = "松鼠（精选好礼）";
+    
+    mycars[5455] = "亡将（精选好礼）";
+    
+    mycars[5456] = "炎魔（精选好礼）";
+    
+    mycars[5457] = "小丑（精选好礼）";
+    
+    mycars[5458] = "咕咕（精选好礼）";
+    
+    mycars[5459] = "火炮（精选好礼）";
+    
+    mycars[5460] = "领主（精选好礼）";
+    
+    mycars[5461] = "沙皇（精选好礼）";
+    
+    mycars[5462] = "孤星（精选好礼）";
+    
+    mycars[6001] = "黑龙宝宝礼包";
+    
+    mycars[6002] = "绿龙宝宝礼包";
+    
+    mycars[9000] = "每日免费宝箱1";
+    
+    mycars[9001] = "每日免费宝箱2";
+    
+    mycars[9002] = "每日免费宝箱3";
+    
+    mycars[9010] = "广告紫宝箱";
+    
+    mycars[9011] = "广告3日宝箱";
+    
+    mycars[9012] = "广告7日宝箱";
+    
+    mycars[9020] = "精灵的馈赠";
+    
+    mycars[10001] = "冰骑碎片";
+    
+    mycars[10002] = "恶魔碎片";
+    
+    mycars[10003] = "火法碎片";
+    
+    mycars[10004] = "剑客碎片";
+    
+    mycars[10005] = "刺客碎片";
+    
+    mycars[10006] = "小鹿碎片";
+    
+    mycars[10007] = "冰法碎片";
+    
+    mycars[10008] = "蛇女碎片";
+    
+    mycars[10009] = "绿弓碎片";
+    
+    mycars[10010] = "冰弓碎片";
+    
+    mycars[10011] = "暗法碎片";
+    
+    mycars[10012] = "雷神碎片";
+    
+    mycars[10013] = "战将碎片";
+    
+    mycars[10014] = "刀客碎片";
+    
+    mycars[10015] = "海妖碎片";
+    
+    mycars[10016] = "大树碎片";
+    
+    mycars[10017] = "铁骑碎片";
+    
+    mycars[10018] = "飞机碎片";
+    
+    mycars[10019] = "炸弹碎片";
+    
+    mycars[10020] = "谜云碎片";
+    
+    mycars[10021] = "神龛碎片";
+    
+    mycars[10022] = "骨弓碎片";
+    
+    mycars[10023] = "祭司碎片";
+    
+    mycars[10024] = "斧客碎片";
+    
+    mycars[10025] = "死神碎片";
+    
+    mycars[10026] = "电法碎片";
+    
+    mycars[10027] = "火枪碎片";
+    
+    mycars[10028] = "石头碎片";
+    
+    mycars[10029] = "蜘蛛碎片";
+    
+    mycars[10030] = "骨龙碎片";
+    
+    mycars[10031] = "圣骑碎片";
+    
+    mycars[10032] = "巫医碎片";
+    
+    mycars[10033] = "女王碎片";
+    
+    mycars[10034] = "光精灵碎片";
+    
+    mycars[10035] = "雷精灵碎片";
+    
+    mycars[10036] = "悟空碎片";
+    
+    mycars[10037] = "幽灵碎片";
+    
+    mycars[10038] = "工匠碎片";
+    
+    mycars[10039] = "幻精灵碎片";
+    
+    mycars[10040] = "暗精灵碎片";
+    
+    mycars[10041] = "萌萌碎片";
+    
+    mycars[10042] = "恶匪碎片";
+    
+    mycars[10043] = "虎弓碎片";
+    
+    mycars[10044] = "木精灵碎片";
+    
+    mycars[10045] = "霸王碎片";
+    
+    mycars[10046] = "地精碎片";
+    
+    mycars[10047] = "毒王碎片";
+    
+    mycars[10048] = "萨满碎片";
+    
+    mycars[10049] = "神龙碎片";
+    
+    mycars[10050] = "魔精灵碎片";
+    
+    mycars[10051] = "狂龙碎片";
+    
+    mycars[10052] = "酋长碎片";
+    
+    mycars[10053] = "后羿碎片";
+    
+    mycars[10054] = "松鼠碎片";
+    
+    mycars[10055] = "亡将碎片";
+    
+    mycars[10056] = "炎魔碎片";
+    
+    mycars[10057] = "小丑碎片";
+    
+    mycars[10058] = "咕咕碎片";
+    
+    mycars[10059] = "火炮碎片";
+    
+    mycars[10060] = "领主碎片";
+    
+    mycars[10061] = "沙皇碎片";
+    
+    mycars[10062] = "孤星碎片";
+    
+    mycars[11001] = "21年12月16日版本更新补偿5000钻石";
+    
+    mycars[11002] = "21年12月16日版本更新补偿600钻石";
+    
+    mycars[11003] = "21年12月16日版本更新补偿10000钻石";
+    
+    mycars[12001] = "随机绿卡";
+    
+    mycars[12002] = "随机蓝卡";
+    
+    mycars[12003] = "随机紫卡";
+    
+    mycars[12004] = "随机紫卡";
+    
+    mycars[12005] = "随机绿卡*50";
+    
+    mycars[12006] = "随机蓝卡*10";
+    
+    mycars[12007] = "随机紫卡*2";
+    
+    mycars[110001] = "萌新1元宝箱";
+    
+    mycars[110002] = "萌新12元宝箱";
+    
+    mycars[110003] = "萌新68元宝箱";
+    
+    mycars[110101] = "萌新1元宝箱随机金卡";
+    
+    mycars[110102] = "萌新12元宝箱随机金卡";
+    
+    mycars[200000] = "随机充值宝箱";
+    
+function add(href,itemname){
+//弹出提示信息和一个可以输入信息框
+//其中有两个参数，第一参数是显示出来提示用户的信息，第二个参数是用户自己输入的内容
+    var InputValue = prompt(itemname +" 添加数量","1");
+    if(InputValue !== ""){
+        location.href = href + "&itemLevel=1&itemNum=" + InputValue + "&itemName=" + itemname;
+        return true;
+    }
+}
+function del(href,itemname){
+//弹出提示信息和一个可以输入信息框
+//其中有两个参数，第一参数是显示出来提示用户的信息，第二个参数是用户自己输入的内容
+    var InputValue = prompt(itemname + " 删除数量","1");
+    if(InputValue !== ""){
+        location.href = href + "&itemLevel=1&itemNum=" + InputValue + "&itemName=" + itemname;
+        return true;
+    }
+}
+function change(href,itemname){
+//弹出提示信息和一个可以输入信息框
+//其中有两个参数，第一参数是显示出来提示用户的信息，第二个参数是用户自己输入的内容
+    var InputValue = prompt("将["+itemname + "]的等级修改为","1");
+    if(InputValue !== ""){
+        location.href = href + "&itemLevel=" + InputValue + "&itemNum=1&itemName=" + itemname;
+        return true;
+    }
+}
+function checkSubmit(){ 
+    
+    if ( confirm('确认提交表单吗？\n\r' + getPromptStr())){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+</script> 
+</head> 
+<body>
+<h2>查询玩家道具</h2>
+<strong>说明：</strong><br/>
+<strong>1.没有培养过的英雄（等级为1），并且没有上阵，可以删除</strong><br/>
+<strong>2.培养过的英雄（等级大于1）不能删除，只可以删除碎片数量（碎片数量=物品总数量-1）</strong><br/>
+<strong>3.删除操作：输入的数量大于物品数量时，删除操作无效</strong><br/><br/>
+<form action="2.php" method="post" accept-charset="UTF-8">
+    <span id="getName">输入类型：</span>
+    <select name="gettype">
+        <option value="4">角色短ID</option>
+        <option value="3">角色长ID</option>  
+        <option value="1">OpenId</option>
+        <option value="2">UnionId</option>
+    </select><br/>
+    输入：<input type="text" name="rolename"  size="32"/><br/><br/>
+    <input type="hidden" name="flag" value=1>
+    <input type="submit" value="查询"name = 'modify'/><br/>
+</form><br/>
+<table border=1px name='item'>
+                        <thead>
+                            <tr>              
+<th>物品名稱</th>
+<th>物品ID</th>
+<th>物品等級</th>
+<th>物品数量(包含碎片)</th>
+<th>创建时间</th>
+<th>玩家ID</th>
+<th>操作</th>
+</tr>
+                        </thead>
+<script>
+    //分頁顯示
+        $(function () {
+            var $table = $("table");
+            var currentPage = 0; //当前页默认值为0  
+            var pageSize = 20; //每一页显示的数目  
+            $table.bind('paging', function () {
+                $table.find('tbody tr').hide().slice(currentPage * pageSize, (currentPage + 1) * pageSize).show();
+            });
+            var sumRows = $table.find('tbody tr').length;
+            var sumPages = Math.ceil(sumRows / pageSize); //总页数  
+
+            var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码  
+            for (var pageIndex = 0; pageIndex < sumPages; pageIndex++) {
+                $('<a href="#" id="pageStyle" onclick="changCss(this)"><span>' + (pageIndex + 1) + '</span></a>').bind("click", { "newPage": pageIndex }, function (event) {
+                    currentPage = event.data["newPage"];
+                    $table.trigger("paging");
+                    //触发分页函数  
+                }).appendTo($pager);
+                $pager.append(" ");
+            }
+            $pager.insertAfter($table);
+            $table.trigger("paging");
+
+            //默认第一页的a标签效果  
+            var $pagess = $('#pageStyle');
+            $pagess[0].style.backgroundColor = "#006B00";
+            $pagess[0].style.color = "#ffffff";
+        });
+
+        //a链接点击变色，再点其他回复原色  
+        function changCss(obj) {
+            var arr = document.getElementsByTagName("a");
+            for (var i = 0; i < arr.length; i++) {
+                if (obj == arr[i]) {       //当前页样式  
+                    obj.style.backgroundColor = "#006B00";
+                    obj.style.color = "#ffffff";
+                }
+                else {
+                    arr[i].style.color = "";
+                    arr[i].style.backgroundColor = "";
+                }
+            }
+        }      
+    </script>
+                    </table>
+
+
+
+ 
+
+
+</body> 
+</html>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </html>

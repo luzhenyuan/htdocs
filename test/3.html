@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript 数字前补“0”</title>
+<body>
+<script>
+
+    var pad = function(num, cover) {
+        return Array(cover).join(0).concat(num).slice(-cover);
+    };
+    function nzame() {
+        var str = document.getElementById('showID').value;
+        if (str.length > 6) {
+            document.getElementById('showID1').value = str.substr(0, 2) + pad(000001, 13);
+        }  
+    }
+
+</script>
+玩家ID：<input type="text" name="showID" size="32" onclick="nzame()" id="showID"/><br/>
+长ID：<input type="text" name="showID1" size="32" id="showID1" /><br/>
+</body>
+</html>hidden
+101043523
+1010000000043523
+1010000000043523
+67000001
+670000000000001
+670000000000001
